@@ -85,7 +85,7 @@ public class MetodoCramer {
     // y transformar decimales grandes a fraccion es mas dificil los objetos fraccion son una clase a parte en la cual vienen con varios metodos de operaciones
     // basicas de fracciones
     private Fraccion deltaS2x2() {
-        return (matriz[0][0].multiplicacion(matriz[1][1]).resta(matriz[0][1]).multiplicacion(matriz[1][0]));
+         return matriz[0][0].multiplicacion(matriz[1][1]).resta(matriz[1][0].multiplicacion(matriz[0][1]));
     }
     // estos dos metodos son publicos y no privados y no estan siendo usados por lo demas por una cosa importante, lo programe en la interfaz XD y solo los uso ahí
     public boolean SePuedeResolver2x2() {
