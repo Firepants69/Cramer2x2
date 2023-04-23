@@ -76,6 +76,7 @@ public class NewJFrame extends javax.swing.JFrame  {
         respuesta1 = new javax.swing.JLabel();
         respuesta2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        error = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -404,7 +405,8 @@ public class NewJFrame extends javax.swing.JFrame  {
 
         jLabel1.setForeground(new java.awt.Color(0, 153, 153));
         jLabel1.setText("Calculadora cramer 2x2 y 3x3");
-        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 180, -1));
+        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 180, -1));
+        background.add(error, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 250, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -533,20 +535,26 @@ public class NewJFrame extends javax.swing.JFrame  {
                respuesta1.setText("X1 = "+m1.X3x3());
                respuesta2.setText("X2 = "+m1.Y3x3());
                respuesta3.setText("X3 = "+m1.Z3x3());
+               error.setText("");
             }else{
-                respuesta2.setText("no tiene solucion o tiene infinitas soluciones");
+                respuesta2.setText("");
                 respuesta1.setText("");
                 respuesta3.setText("");
+                error.setText("No tiene solucion o tiene infinitas soluciones");
+                error.setForeground(Color.black);
             }
         }else{
             if(m1.SePuedeResolver2x2()){
                 respuesta1.setText("X1 = "+m1.X2x2());
                 respuesta2.setText("X2 = "+m1.Y2x2());
                 respuesta3.setText("");
+                error.setText("");
             }else{
-                respuesta2.setText("no tiene solucion o tiene infinitas soluciones");
+                respuesta2.setText("");
                 respuesta1.setText("");
                 respuesta3.setText("");
+                error.setText("No tiene solucion o tiene infinitas soluciones");
+                error.setForeground(Color.black);
             }
              
         }
@@ -680,6 +688,7 @@ public class NewJFrame extends javax.swing.JFrame  {
     private javax.swing.JPanel B;
     private javax.swing.JPanel background;
     private javax.swing.JPanel barra;
+    private javax.swing.JLabel error;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
