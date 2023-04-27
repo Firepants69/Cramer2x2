@@ -66,8 +66,6 @@ public class NewJFrame extends javax.swing.JFrame  {
         salir1 = new javax.swing.JPanel();
         salir = new javax.swing.JLabel();
         barra = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         B = new javax.swing.JPanel();
         respuesta3 = new javax.swing.JLabel();
@@ -103,6 +101,16 @@ public class NewJFrame extends javax.swing.JFrame  {
         respuesta4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         boton4 = new javax.swing.JPanel();
+        MAX = new javax.swing.JTextField();
+        label15 = new javax.swing.JLabel();
+        separador15 = new javax.swing.JSeparator();
+        MIN = new javax.swing.JTextField();
+        separador16 = new javax.swing.JSeparator();
+        label16 = new javax.swing.JLabel();
+        llenar = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -286,7 +294,7 @@ public class NewJFrame extends javax.swing.JFrame  {
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        background.add(A, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, 20, 20));
+        background.add(A, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 20, 20));
         background.add(separador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, 40, 10));
         background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 40, 10));
         background.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 40, 10));
@@ -344,51 +352,15 @@ public class NewJFrame extends javax.swing.JFrame  {
             }
         });
 
-        jPanel1.setBackground(java.awt.Color.gray);
-        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel1MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanel1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanel1MouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
-        );
-
-        jLabel6.setText("calcular");
-
         javax.swing.GroupLayout barraLayout = new javax.swing.GroupLayout(barra);
         barra.setLayout(barraLayout);
         barraLayout.setHorizontalGroup(
             barraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barraLayout.createSequentialGroup()
-                .addContainerGap(453, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
+            .addGap(0, 540, Short.MAX_VALUE)
         );
         barraLayout.setVerticalGroup(
             barraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barraLayout.createSequentialGroup()
-                .addGap(0, 10, Short.MAX_VALUE)
-                .addGroup(barraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGap(0, 30, Short.MAX_VALUE)
         );
 
         background.add(barra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 540, 30));
@@ -419,14 +391,14 @@ public class NewJFrame extends javax.swing.JFrame  {
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        background.add(B, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, -1, 20));
+        background.add(B, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, -1, 20));
         background.add(respuesta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 230, 20));
 
         jLabel4.setText("3x3");
-        background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, -1, -1));
+        background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, -1, -1));
 
         jLabel5.setText("2x2");
-        background.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, -1, -1));
+        background.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, -1, -1));
         background.add(respuesta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 230, 20));
         background.add(respuesta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 230, 20));
 
@@ -546,9 +518,9 @@ public class NewJFrame extends javax.swing.JFrame  {
         background.add(respuesta4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 230, 20));
 
         jLabel7.setText("4x4");
-        background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, -1, 20));
+        background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, -1, 20));
 
-        boton4.setBackground(java.awt.Color.gray);
+        boton4.setBackground(java.awt.Color.blue);
         boton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         boton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -573,11 +545,96 @@ public class NewJFrame extends javax.swing.JFrame  {
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        background.add(boton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, -1, 20));
+        background.add(boton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 110, -1, 20));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newpackage/fotor_2023-4-26_11_27_39.png"))); // NOI18N
-        jLabel9.setText("jLabel9");
-        background.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 60, 90));
+        MAX.setForeground(java.awt.Color.gray);
+        MAX.setText("0");
+        MAX.setBorder(null);
+        MAX.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MAXMousePressed(evt);
+            }
+        });
+        background.add(MAX, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 300, 40, 20));
+
+        label15.setText("Max");
+        background.add(label15, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, -1, -1));
+        background.add(separador15, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, 40, 10));
+
+        MIN.setForeground(java.awt.Color.gray);
+        MIN.setText("0");
+        MIN.setBorder(null);
+        MIN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MINMousePressed(evt);
+            }
+        });
+        background.add(MIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 40, 20));
+        background.add(separador16, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, 40, 10));
+
+        label16.setText("Min");
+        background.add(label16, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 270, -1, -1));
+
+        llenar.setBackground(java.awt.Color.gray);
+        llenar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        llenar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                llenarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                llenarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                llenarMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout llenarLayout = new javax.swing.GroupLayout(llenar);
+        llenar.setLayout(llenarLayout);
+        llenarLayout.setHorizontalGroup(
+            llenarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        llenarLayout.setVerticalGroup(
+            llenarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        background.add(llenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, -1, 20));
+
+        jLabel8.setText("llenar");
+        background.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, -1, -1));
+
+        jLabel6.setText("calcular");
+        background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, -1, -1));
+
+        jPanel1.setBackground(java.awt.Color.gray);
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel1MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, -1, 20));
+        background.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 570, 110));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -731,7 +788,8 @@ public class NewJFrame extends javax.swing.JFrame  {
             AudioClip sonido;
             sonido = java.applet.Applet.newAudioClip(getClass().getResource("/newpackage/videoplayback.wav"));
             sonido.play();
-            m1.RellenarMatriz(0, 0, valor00.getText());
+            try{
+                m1.RellenarMatriz(0, 0, valor00.getText());
             m1.RellenarMatriz(0, 1, valor01.getText());
             m1.RellenarMatriz(0, 2, valor02.getText());
             m1.RellenarMatriz(0, 3, valor03.getText());
@@ -756,7 +814,7 @@ public class NewJFrame extends javax.swing.JFrame  {
                respuesta1.setText("X1 = "+m1.X4x4());
                respuesta2.setText("X2 = "+m1.Y4x4());
                respuesta4.setText("X3 = "+m1.Z4x4());
-               respuesta3.setText("X3 = "+m1.W4x4());
+               respuesta3.setText("X4 = "+m1.W4x4());
                error.setText("");
             }else{
                 respuesta2.setText("");
@@ -798,10 +856,13 @@ public class NewJFrame extends javax.swing.JFrame  {
             }
              
         }
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(this, "¡Erro! tipo: "+ e);
+            }
     }//GEN-LAST:event_jPanel1MouseClicked
 
     private void jPanel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseEntered
-        jPanel1.setBackground(Color.blue);
+        jPanel1.setBackground(Color.red);
     }//GEN-LAST:event_jPanel1MouseEntered
 
     private void jPanel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseExited
@@ -823,7 +884,7 @@ public class NewJFrame extends javax.swing.JFrame  {
     }//GEN-LAST:event_BMouseEntered
 
     private void BMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BMouseExited
-        if(label7.isVisible()&& label9.isVisible()){
+        if(label9.isVisible()&&label7.isVisible()||label1.getText()=="+x2 ="){
             B.setBackground(Color.gray);
         }
     }//GEN-LAST:event_BMouseExited
@@ -987,6 +1048,73 @@ public class NewJFrame extends javax.swing.JFrame  {
             boton4.setBackground(Color.gray);
         }
     }//GEN-LAST:event_boton4MouseExited
+
+    private void llenarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_llenarMouseExited
+      llenar.setBackground(Color.gray);
+    }//GEN-LAST:event_llenarMouseExited
+
+    private void llenarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_llenarMouseEntered
+         llenar.setBackground(Color.red);
+    }//GEN-LAST:event_llenarMouseEntered
+
+    private void llenarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_llenarMouseClicked
+        int max =Integer.valueOf(MAX.getText());
+        int min =Integer.valueOf(MIN.getText());
+        valor00.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor01.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor02.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor03.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor04.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor10.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor11.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor12.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor13.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor14.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor20.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor21.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor22.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor23.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor24.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor30.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor31.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor32.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor33.setText(m1.GenerarNumerosAleatorios(min, max));
+        valor34.setText(m1.GenerarNumerosAleatorios(min, max));
+        
+        valor00.setForeground(Color.black);
+        valor01.setForeground(Color.black);
+        valor02.setForeground(Color.black);
+        valor03.setForeground(Color.black);
+        valor04.setForeground(Color.black);
+        valor10.setForeground(Color.black);
+        valor11.setForeground(Color.black);
+        valor12.setForeground(Color.black);
+        valor13.setForeground(Color.black);
+        valor14.setForeground(Color.black);
+        valor20.setForeground(Color.black);
+        valor21.setForeground(Color.black);
+        valor22.setForeground(Color.black);
+        valor23.setForeground(Color.black);
+        valor24.setForeground(Color.black);
+        valor30.setForeground(Color.black);
+        valor31.setForeground(Color.black);
+        valor32.setForeground(Color.black);
+        valor33.setForeground(Color.black);
+        valor34.setForeground(Color.black);
+        
+        
+
+    }//GEN-LAST:event_llenarMouseClicked
+
+    private void MAXMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MAXMousePressed
+        MAX.setText("");
+        MAX.setForeground(Color.black);
+    }//GEN-LAST:event_MAXMousePressed
+
+    private void MINMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MINMousePressed
+        MIN.setText("");
+        MIN.setForeground(Color.black);
+    }//GEN-LAST:event_MINMousePressed
     
     /**
      * @param args the command line arguments
@@ -1026,6 +1154,8 @@ public class NewJFrame extends javax.swing.JFrame  {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel A;
     private javax.swing.JPanel B;
+    private javax.swing.JTextField MAX;
+    private javax.swing.JTextField MIN;
     private javax.swing.JPanel background;
     private javax.swing.JPanel barra;
     private javax.swing.JPanel boton4;
@@ -1037,6 +1167,7 @@ public class NewJFrame extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
@@ -1052,6 +1183,8 @@ public class NewJFrame extends javax.swing.JFrame  {
     private javax.swing.JLabel label12;
     private javax.swing.JLabel label13;
     private javax.swing.JLabel label14;
+    private javax.swing.JLabel label15;
+    private javax.swing.JLabel label16;
     private javax.swing.JLabel label2;
     private javax.swing.JLabel label3;
     private javax.swing.JLabel label4;
@@ -1060,6 +1193,7 @@ public class NewJFrame extends javax.swing.JFrame  {
     private javax.swing.JLabel label7;
     private javax.swing.JLabel label8;
     private javax.swing.JLabel label9;
+    private javax.swing.JPanel llenar;
     private javax.swing.JLabel respuesta1;
     private javax.swing.JLabel respuesta2;
     private javax.swing.JLabel respuesta3;
@@ -1072,6 +1206,8 @@ public class NewJFrame extends javax.swing.JFrame  {
     private javax.swing.JSeparator separador12;
     private javax.swing.JSeparator separador13;
     private javax.swing.JSeparator separador14;
+    private javax.swing.JSeparator separador15;
+    private javax.swing.JSeparator separador16;
     private javax.swing.JSeparator separador2;
     private javax.swing.JSeparator separador3;
     private javax.swing.JSeparator separador4;
