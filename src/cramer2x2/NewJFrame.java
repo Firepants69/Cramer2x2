@@ -6,6 +6,7 @@ package cramer2x2;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import java.applet.AudioClip;
+import javax.swing.ImageIcon;
 /**
  *
  * @author humer
@@ -16,6 +17,8 @@ public class NewJFrame extends javax.swing.JFrame  {
     MetodoCramer m1 = new MetodoCramer();
     public NewJFrame() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/newpackage/matriz.png")).getImage());
+        
     }
     
 
@@ -111,7 +114,8 @@ public class NewJFrame extends javax.swing.JFrame  {
         jLabel8 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -634,7 +638,10 @@ public class NewJFrame extends javax.swing.JFrame  {
         );
 
         background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, -1, 20));
-        background.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 570, 110));
+        background.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, -1, -1));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newpackage/uv logo.jpg"))); // NOI18N
+        background.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1058,6 +1065,10 @@ public class NewJFrame extends javax.swing.JFrame  {
     }//GEN-LAST:event_llenarMouseEntered
 
     private void llenarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_llenarMouseClicked
+        try{
+            AudioClip sonido;
+            sonido = java.applet.Applet.newAudioClip(getClass().getResource("/newpackage/videoplayback.wav"));
+            sonido.play();
         int max =Integer.valueOf(MAX.getText());
         int min =Integer.valueOf(MIN.getText());
         valor00.setText(m1.GenerarNumerosAleatorios(min, max));
@@ -1101,6 +1112,9 @@ public class NewJFrame extends javax.swing.JFrame  {
         valor32.setForeground(Color.black);
         valor33.setForeground(Color.black);
         valor34.setForeground(Color.black);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "¡Error!,coloca un maximo y un minimo en enteros para rellenar la matriz con numeros aleatorios. ");
+        }
         
         
 
@@ -1161,6 +1175,8 @@ public class NewJFrame extends javax.swing.JFrame  {
     private javax.swing.JPanel boton4;
     private javax.swing.JLabel error;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1168,7 +1184,6 @@ public class NewJFrame extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
