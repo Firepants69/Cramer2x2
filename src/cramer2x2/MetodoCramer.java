@@ -167,9 +167,9 @@ public class MetodoCramer {
     // metodos para visualizar y calcular las respuestas de cramer 3x3
     public String[] resultados3x3(){
         String [] resultados = new String[3];
-        resultados[0] = formaString(determinante3x3(cambiarColumna3x3(0)).dividir(deltaS3x3())); 
-        resultados[1] = formaString(determinante3x3(cambiarColumna3x3(1)).dividir(deltaS3x3()));
-        resultados[2] = formaString(determinante3x3(cambiarColumna3x3(2)).dividir(deltaS3x3()));
+        for(int i =0;i<3;i++){
+            resultados[i] = formaString(determinante3x3(cambiarColumna3x3(i)).dividir(deltaS3x3())); 
+        }
         return resultados;
     }
 
@@ -247,10 +247,9 @@ public class MetodoCramer {
    
     public String[] resultados4x4(){
         String [] resultados = new String[4];
-        resultados[0] = formaString(determinante4x4(cambiarColumna4x4(0)).dividir(determinantePrincipal4x4()));
-        resultados[1] = formaString(determinante4x4(cambiarColumna4x4(1)).dividir(determinantePrincipal4x4()));
-        resultados[2] = formaString(determinante4x4(cambiarColumna4x4(2)).dividir(determinantePrincipal4x4()));
-        resultados[3] = formaString(determinante4x4(cambiarColumna4x4(3)).dividir(determinantePrincipal4x4()));
+        for(int i =0;i<4;i++){
+            resultados[i] =formaString(determinante4x4(cambiarColumna4x4(i)).dividir(determinantePrincipal4x4())); 
+        }
         return resultados;
     }
 
