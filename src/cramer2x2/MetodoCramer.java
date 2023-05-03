@@ -27,7 +27,7 @@ public class MetodoCramer {
           return String.valueOf(numeroAleatorio);
     }
 
-    // para llenar la matriz de 3x4 que uso en los dos casos
+    // para llenar la matriz de 4x5 que uso en los dos casos tambien se puede incluir fracciones con este metodo
     public void RellenarMatriz(int fila, int columna, String valor) {
         int pocisionDelSeparador = valor.indexOf("/");
         if (pocisionDelSeparador != -1) {
@@ -98,8 +98,7 @@ public class MetodoCramer {
     }
 
     /*
-     este metodo esta bien aburrido pero es lo mas obvio y lo mas optimo para
-     tomar en cuenta en este caso genera el determinante pero en forma de fraccion
+     este metodo genera la determinante3x3 a traves de una formula
     */
     private Fraccion determinante3x3(Fraccion matriz[][]) {
         f1 = matriz[0][0].multiplicacion(matriz[1][1], matriz[2][2])
@@ -133,39 +132,17 @@ public class MetodoCramer {
     }
 
     /*
-     este otro metodo calcula X a partir de usar la matriz delta creada con un
-     metodo anteriormente, intercambiado los valores de la fila 3 de la matriz de
-     3x4
-     por la fila 0 de esta nueva matriz llamada matrizDeltaX luego le saca la
-     determinante con el mismo metodo que creamos antes y lo divide por la
-     determinante de la
-     matriz original*/
-    private Fraccion X3x31() {
-        Fraccion matrizDeltax[][] = matrizDelta();
+    este metodo realiza el cambio de una colunma de la matriz 3x3 por los terminos independientes
+    el int columnaCambio es el indice de la columna que vamos a cambiar por los teminos independientes
+    */
+    private Fraccion [][]cambiarColumna3x3(int columnaCambio){
+        Fraccion [][] matrizdeltaX = matrizDelta();
         for (int i = 0; i < 3; i++) {
-            matrizDeltax[i][0] = matriz[i][3];
+            matrizdeltaX[i][columnaCambio] = matriz[i][3];
         }
-        return determinante3x3(matrizDeltax).dividir(deltaS3x3());
-
+        return matrizdeltaX;
     }
-
-    // este metodo genera Y dividiendo el determinante de Y entre el determinante de delta S
-    private Fraccion Y3x31() {
-        Fraccion matrizDeltaY[][] = matrizDelta();
-        for (int i = 0; i < 3; i++) {
-            matrizDeltaY[i][1] = matriz[i][3];
-        }
-        return determinante3x3(matrizDeltaY).dividir(deltaS3x3());
-    }
-
-    // este meotdo hace lo mismo que los otros 3 pero con Z
-    private Fraccion Z3x31() {
-        Fraccion matrizDeltaZ[][] = matrizDelta();
-        for (int i = 0; i < 3; i++) {
-            matrizDeltaZ[i][2] = matriz[i][3];
-        }
-        return determinante3x3(matrizDeltaZ).dividir(deltaS3x3());
-    }
+ 
 
      /*
     este metodo se trata del que le da forma a las fracciones y me permite poder
@@ -187,21 +164,17 @@ public class MetodoCramer {
         }
     }
 
-    // metodos para visualizar las respuestas de cramer 3x3
-    public String X3x3() {
-        return formaString(X3x31());
-    }
-
-    public String Y3x3() {
-        return formaString(Y3x31());
-    }
-
-    public String Z3x3() {
-        return formaString(Z3x31());
+    // metodos para visualizar y calcular las respuestas de cramer 3x3
+    public String[] resultados3x3(){
+        String [] resultados = new String[3];
+        resultados[0] = formaString(determinante3x3(cambiarColumna3x3(0)).dividir(deltaS3x3())); 
+        resultados[1] = formaString(determinante3x3(cambiarColumna3x3(1)).dividir(deltaS3x3()));
+        resultados[2] = formaString(determinante3x3(cambiarColumna3x3(2)).dividir(deltaS3x3()));
+        return resultados;
     }
 
     // obtiene la matriz 4x4 original
-    public Fraccion[][] matriz4x4() {
+    private Fraccion[][] matriz4x4() {
         Fraccion matriz1[][] = new Fraccion[4][4];
         for (int i = 0; i <= 3; i++) {
             for (int j = 0; j <= 3; j++) {
@@ -259,46 +232,26 @@ public class MetodoCramer {
         Fraccion[][] matriz1 = matriz4x4();
         return determinante4x4(matriz1);
     }
-
-    // metodos para obtener x,y,z,w o x1,x2,x3,x4
-    public String X4x4() {
+    /*
+    este metodo hace lo mismo que el cambiarColumna3x3 pero para una matriz 4x4
+    */
+    private Fraccion [][] cambiarColumna4x4(int columnaCambiada){
         Fraccion[][] matriz1 = matriz4x4();
-        Fraccion f1 = new Fraccion();
         for (int i = 0; i < 4; i++) {
-            matriz1[i][0] = matriz[i][4];
+            matriz1[i][columnaCambiada] = matriz[i][4];
         }
-        f1 = determinante4x4(matriz1).dividir(determinantePrincipal4x4());
-        return formaString(f1);
+        return matriz1;
     }
 
-    public String Y4x4() {
-        Fraccion[][] matriz1 = matriz4x4();
-        Fraccion f1 = new Fraccion();
-        for (int i = 0; i < 4; i++) {
-            matriz1[i][1] = matriz[i][4];
-        }
-        f1 = determinante4x4(matriz1).dividir(determinantePrincipal4x4());
-        return formaString(f1);
-    }
-
-    public String Z4x4() {
-        Fraccion[][] matriz1 = matriz4x4();
-        Fraccion f1 = new Fraccion();
-        for (int i = 0; i < 4; i++) {
-            matriz1[i][2] = matriz[i][4];
-        }
-        f1 = determinante4x4(matriz1).dividir(determinantePrincipal4x4());
-        return formaString(f1);
-    }
-
-    public String W4x4() {
-        Fraccion[][] matriz1 = matriz4x4();
-        Fraccion f1 = new Fraccion();
-        for (int i = 0; i < 4; i++) {
-            matriz1[i][3] = matriz[i][4];
-        }
-        f1 = determinante4x4(matriz1).dividir(determinantePrincipal4x4());
-        return formaString(f1);
+    // metodo para obtener x,y,z,w o x1,x2,x3,x4
+   
+    public String[] resultados4x4(){
+        String [] resultados = new String[4];
+        resultados[0] = formaString(determinante4x4(cambiarColumna4x4(0)).dividir(determinantePrincipal4x4()));
+        resultados[1] = formaString(determinante4x4(cambiarColumna4x4(1)).dividir(determinantePrincipal4x4()));
+        resultados[2] = formaString(determinante4x4(cambiarColumna4x4(2)).dividir(determinantePrincipal4x4()));
+        resultados[3] = formaString(determinante4x4(cambiarColumna4x4(3)).dividir(determinantePrincipal4x4()));
+        return resultados;
     }
 
      /*

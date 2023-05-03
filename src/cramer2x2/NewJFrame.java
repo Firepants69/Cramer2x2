@@ -818,10 +818,10 @@ public class NewJFrame extends javax.swing.JFrame  {
             m1.RellenarMatriz(3, 4, valor34.getText());
               if(label9.isVisible()){
             if(m1.sePuedeResolver4x4()){
-               respuesta1.setText("X1 = "+m1.X4x4());
-               respuesta2.setText("X2 = "+m1.Y4x4());
-               respuesta4.setText("X3 = "+m1.Z4x4());
-               respuesta3.setText("X4 = "+m1.W4x4());
+               respuesta1.setText("X1 = "+m1.resultados4x4()[0]);
+               respuesta2.setText("X2 = "+m1.resultados4x4()[1]);
+               respuesta4.setText("X3 = "+m1.resultados4x4()[2]);
+               respuesta3.setText("X4 = "+m1.resultados4x4()[3]);
                error.setText("");
             }else{
                 respuesta2.setText("");
@@ -833,9 +833,9 @@ public class NewJFrame extends javax.swing.JFrame  {
             }
         }else if(label9.isVisible()==false&&label7.isVisible()){
              if(m1.SePuedeResolver3x3()){
-               respuesta1.setText("X1 = "+m1.X3x3());
-               respuesta2.setText("X2 = "+m1.Y3x3());
-               respuesta4.setText("X3 = "+m1.Z3x3());
+               respuesta1.setText("X1 = "+m1.resultados3x3()[0]);
+               respuesta2.setText("X2 = "+m1.resultados3x3()[1]);
+               respuesta4.setText("X3 = "+m1.resultados3x3()[2]);
                respuesta3.setText("");
                error.setText("");
             }else{
