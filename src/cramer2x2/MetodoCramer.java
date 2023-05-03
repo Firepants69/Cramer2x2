@@ -41,21 +41,24 @@ public class MetodoCramer {
         }
     }
 
-    // yo le puse delta S pero se trata de la determinante de lq primer matriz aqui
-    // no use ningun for o bucle debido a que eran operaciones bastante sencillas
-    // de igual forma se nota que uso una matriz de objetos fraccion debido a que al
-    // hacerlo con decimales el resultado no queda igual de limpio a mi parecer
-    // y transformar decimales grandes a fraccion es mas dificil los objetos
-    // fraccion son una clase a parte en la cual vienen con varios metodos de
-    // operaciones
-    // basicas de fracciones
+  /*
+     metodo que calcula la determinante de la primer matriz aqui
+     no use ningun for o bucle debido a que eran operaciones bastante sencillas
+     de igual forma se nota que uso una matriz de objetos fraccion debido a que al
+     hacerlo con decimales el resultado no queda igual de limpio a mi parecer
+    y transformar decimales grandes a fraccion es mas dificil los objetos
+     fraccion son una clase a parte en la cual vienen con varios metodos de
+     operaciones
+     basicas de fracciones
+    */
     private Fraccion deltaS2x2() {
         return matriz[0][0].multiplicacion(matriz[1][1]).resta(matriz[1][0].multiplicacion(matriz[0][1]));
     }
 
-    // estos dos metodos son publicos y no privados y no estan siendo usados por lo
-    // demas por una cosa importante, lo programe en la interfaz XD y solo los uso
-    // ahí
+   /*
+     estos dos metodos son publicos y no privados y no estan siendo usados por lo
+     demas por una cosa importante, lo programe en la interfaz XD y solo los uso
+    ahí*/
     public boolean SePuedeResolver2x2() {
         int s = Integer.valueOf(formaString(deltaS2x2()));
         return s != 0;
@@ -70,13 +73,14 @@ public class MetodoCramer {
         return s!=0;
     }
 
-    // estos dos metodos son ya la resolucion y usan otros varios para verse mejor
-    // evidentemente, en esta caso lo unico que hace es calcular la matriz de X y Y
-    // y dividirla por la matriz original usando los metodos de fracciones
-    // evidentemente y por ultimo usa el metodo formaString() el cual primero que
-    // nada convierte un
-    // objeto fraccion a string pero antes de eso simplifica la fraccion o la vuelve
-    // entero dependiendo del caso
+    /*
+     estos dos metodos son ya la resolucion y usan otros varios para verse mejor
+     evidentemente, en esta caso lo unico que hace es calcular la matriz de X y Y
+     y dividirla por la matriz original usando los metodos de fracciones
+     evidentemente y por ultimo usa el metodo formaString() el cual primero que
+     nada convierte un
+     objeto fraccion a string pero antes de eso simplifica la fraccion o la vuelve
+     entero dependiendo del caso*/
     public String X2x2() {
         Fraccion f1 = new Fraccion();
         f1 = matriz[0][2].multiplicacion(matriz[1][1]).resta(matriz[1][2].multiplicacion(matriz[0][1]));
@@ -93,8 +97,10 @@ public class MetodoCramer {
         return formaString(f2);
     }
 
-    // este metodo esta bien aburrido pero es lo mas obvio y lo mas optimo para
-    // tomar en cuenta en este caso genera el determinante pero en forma de fraccion
+    /*
+     este metodo esta bien aburrido pero es lo mas obvio y lo mas optimo para
+     tomar en cuenta en este caso genera el determinante pero en forma de fraccion
+    */
     private Fraccion determinante3x3(Fraccion matriz[][]) {
         f1 = matriz[0][0].multiplicacion(matriz[1][1], matriz[2][2])
                 .suma(matriz[0][1].multiplicacion(matriz[1][2], matriz[2][0]))
@@ -105,8 +111,9 @@ public class MetodoCramer {
         return f1;
     }
 
-    // ahora este metodo genera la matriz origal a traves de llenar una matriz de
-    // 3x3 por los datos de matriz que llenas en la interfaz que es 3x4
+    /*
+     ahora este metodo genera la matriz origal a traves de llenar una matriz de
+     3x3 por los datos de matriz que llenas en la interfaz que es 3x4*/
     private Fraccion[][] matrizDelta() {
         Fraccion matrizDelta[][] = new Fraccion[3][3];
         for (int i = 0; i < 3; i++) {
@@ -117,19 +124,22 @@ public class MetodoCramer {
         return matrizDelta;
     }
 
-    // este metodo genera deltaS pero es el resultado de sacar la determinante de la
-    // matriz original
+     /*
+    este metodo genera deltaS pero es el resultado de sacar la determinante de la
+     matriz original
+    */
     private Fraccion deltaS3x3() {
         return determinante3x3(matrizDelta());
     }
 
-    // este otro metodo calcula X a partir de usar la matriz delta creada con un
-    // metodo anteriormente, intercambiado los valores de la fila 3 de la matriz de
-    // 3x4
-    // por la fila 0 de esta nueva matriz llamada matrizDeltaX luego le saca la
-    // determinante con el mismo metodo que creamos antes y lo divide por la
-    // determinante de la
-    // matriz original
+    /*
+     este otro metodo calcula X a partir de usar la matriz delta creada con un
+     metodo anteriormente, intercambiado los valores de la fila 3 de la matriz de
+     3x4
+     por la fila 0 de esta nueva matriz llamada matrizDeltaX luego le saca la
+     determinante con el mismo metodo que creamos antes y lo divide por la
+     determinante de la
+     matriz original*/
     private Fraccion X3x31() {
         Fraccion matrizDeltax[][] = matrizDelta();
         for (int i = 0; i < 3; i++) {
@@ -139,8 +149,7 @@ public class MetodoCramer {
 
     }
 
-    // este metodo genera Y dividiendo el determinante de Y entre el determinante de
-    // delta S
+    // este metodo genera Y dividiendo el determinante de Y entre el determinante de delta S
     private Fraccion Y3x31() {
         Fraccion matrizDeltaY[][] = matrizDelta();
         for (int i = 0; i < 3; i++) {
@@ -158,12 +167,14 @@ public class MetodoCramer {
         return determinante3x3(matrizDeltaZ).dividir(deltaS3x3());
     }
 
-    // este metodo se trata del que le da forma a las fracciones y me permite poder
-    // mostrarlas de forma adecuada
-    // utliza varios metodos dentro de si mismo uno de ellos es el de simplificar
-    // fracciones y un if para que cuando el residuo de la division de numerador y
-    // el denominador
-    // sea 0 estos se dividan entre si, con eso lo transformaria a enteros.
+     /*
+    este metodo se trata del que le da forma a las fracciones y me permite poder
+     mostrarlas de forma adecuada
+     utliza varios metodos dentro de si mismo uno de ellos es el de simplificar
+     fracciones y un if para que cuando el residuo de la division de numerador y
+     el denominador
+     sea 0 estos se dividan entre si, con eso lo transformaria a enteros.
+    */
     private String formaString(Fraccion forma) {
         if (forma.getNumerador() % forma.getDenominador() == 0) {
             int resultado = forma.getNumerador() / forma.getDenominador();
@@ -290,8 +301,10 @@ public class MetodoCramer {
         return formaString(f1);
     }
 
-    // metodo que usa otro metodo que calcula el maximo comun divisor y luego divide
-    // tanto al numerador como al denominador por el.
+     /*
+    metodo que usa otro metodo que calcula el maximo comun divisor y luego divide
+     tanto al numerador como al denominador por el.
+    */
     private Fraccion Simplificar(Fraccion f1) {
         Fraccion f2 = new Fraccion();
         int mcd = maximoComunDivisor(f1);
