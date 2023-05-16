@@ -51,7 +51,7 @@ public class MetodoCramer {
      operaciones
      basicas de fracciones
     */
-    private Fraccion deltaS2x2() {
+    public Fraccion deltaS2x2() {
         return matriz[0][0].multiplicacion(matriz[1][1]).resta(matriz[1][0].multiplicacion(matriz[0][1]));
     }
 
@@ -127,7 +127,7 @@ public class MetodoCramer {
     este metodo genera deltaS pero es el resultado de sacar la determinante de la
      matriz original
     */
-    private Fraccion deltaS3x3() {
+    public Fraccion deltaS3x3() {
         return determinante3x3(matrizDelta());
     }
 
@@ -152,7 +152,7 @@ public class MetodoCramer {
      el denominador
      sea 0 estos se dividan entre si, con eso lo transformaria a enteros.
     */
-    private String formaString(Fraccion forma) {
+    public String formaString(Fraccion forma) {
         if (forma.getNumerador() % forma.getDenominador() == 0) {
             int resultado = forma.getNumerador() / forma.getDenominador();
             String resultadoS = String.valueOf(resultado);

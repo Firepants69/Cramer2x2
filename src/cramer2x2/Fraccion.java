@@ -6,7 +6,7 @@ public class Fraccion {
     private int numerador;
     private int denominador;
 
-    public Fraccion() {
+public Fraccion() {
     }
 
     public Fraccion(int numerador, int denominador) {

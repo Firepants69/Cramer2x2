@@ -116,6 +116,8 @@ public class NewJFrame extends javax.swing.JFrame  {
         jPanel1 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        respuesta5 = new javax.swing.JLabel();
+        deter = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -396,15 +398,15 @@ public class NewJFrame extends javax.swing.JFrame  {
         );
 
         background.add(B, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, -1, 20));
-        background.add(respuesta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 230, 20));
+        background.add(respuesta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 360, 20));
 
         jLabel4.setText("3x3");
         background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, -1, -1));
 
         jLabel5.setText("2x2");
         background.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, -1, -1));
-        background.add(respuesta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 230, 20));
-        background.add(respuesta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 230, 20));
+        background.add(respuesta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 360, 20));
+        background.add(respuesta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 360, 20));
 
         jLabel1.setForeground(new java.awt.Color(0, 153, 153));
         jLabel1.setText("Calculadora cramer 2x2 , 3x3 y 4x4");
@@ -519,7 +521,7 @@ public class NewJFrame extends javax.swing.JFrame  {
 
         label14.setText("x4 =");
         background.add(label14, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, -1, -1));
-        background.add(respuesta4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 230, 20));
+        background.add(respuesta4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 360, 20));
 
         jLabel7.setText("4x4");
         background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, -1, 20));
@@ -642,6 +644,10 @@ public class NewJFrame extends javax.swing.JFrame  {
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newpackage/uv logo.jpg"))); // NOI18N
         background.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, 80));
+        background.add(respuesta5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 360, 20));
+
+        deter.setForeground(java.awt.Color.gray);
+        background.add(deter, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 360, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -651,9 +657,7 @@ public class NewJFrame extends javax.swing.JFrame  {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE)
         );
 
         pack();
@@ -822,7 +826,9 @@ public class NewJFrame extends javax.swing.JFrame  {
                respuesta2.setText("X2 = "+m1.resultados4x4()[1]);
                respuesta4.setText("X3 = "+m1.resultados4x4()[2]);
                respuesta3.setText("X4 = "+m1.resultados4x4()[3]);
+               deter.setText("Esl determinante es: "+m1.formaString(m1.determinantePrincipal4x4()));
                error.setText("");
+               
             }else{
                 respuesta2.setText("");
                 respuesta1.setText("");
@@ -830,6 +836,7 @@ public class NewJFrame extends javax.swing.JFrame  {
                 respuesta4.setText("");
                 error.setText("No tiene solucion o tiene infinitas soluciones");
                 error.setForeground(Color.red);
+                deter.setText("");
             }
         }else if(label9.isVisible()==false&&label7.isVisible()){
              if(m1.SePuedeResolver3x3()){
@@ -838,6 +845,7 @@ public class NewJFrame extends javax.swing.JFrame  {
                respuesta4.setText("X3 = "+m1.resultados3x3()[2]);
                respuesta3.setText("");
                error.setText("");
+               deter.setText("El determinante es: "+m1.formaString(m1.deltaS3x3())  );
             }else{
                 respuesta2.setText("");
                 respuesta1.setText("");
@@ -845,6 +853,7 @@ public class NewJFrame extends javax.swing.JFrame  {
                 respuesta4.setText("");
                 error.setText("No tiene solucion o tiene infinitas soluciones");
                 error.setForeground(Color.red);
+                deter.setText("");
              }
         }else{
             if(m1.SePuedeResolver2x2()){
@@ -853,6 +862,7 @@ public class NewJFrame extends javax.swing.JFrame  {
                 respuesta1.setText("");
                 respuesta3.setText("");
                 error.setText("");
+                deter.setText("El determinante es: "+m1.formaString(m1.deltaS2x2())  );
             }else{
                 respuesta2.setText("");
                 respuesta1.setText("");
@@ -860,6 +870,8 @@ public class NewJFrame extends javax.swing.JFrame  {
                 respuesta4.setText("");
                 error.setText("No tiene solucion o tiene infinitas soluciones");
                 error.setForeground(Color.red);
+                deter.setText("");
+                
             }
              
         }
@@ -1173,6 +1185,7 @@ public class NewJFrame extends javax.swing.JFrame  {
     private javax.swing.JPanel background;
     private javax.swing.JPanel barra;
     private javax.swing.JPanel boton4;
+    private javax.swing.JLabel deter;
     private javax.swing.JLabel error;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1213,6 +1226,7 @@ public class NewJFrame extends javax.swing.JFrame  {
     private javax.swing.JLabel respuesta2;
     private javax.swing.JLabel respuesta3;
     private javax.swing.JLabel respuesta4;
+    private javax.swing.JLabel respuesta5;
     private javax.swing.JLabel salir;
     private javax.swing.JPanel salir1;
     private javax.swing.JSeparator separador1;
