@@ -69,6 +69,7 @@ public class NewJFrame extends javax.swing.JFrame  {
         salir1 = new javax.swing.JPanel();
         salir = new javax.swing.JLabel();
         barra = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         B = new javax.swing.JPanel();
         respuesta3 = new javax.swing.JLabel();
@@ -358,18 +359,31 @@ public class NewJFrame extends javax.swing.JFrame  {
             }
         });
 
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newpackage/pregunta.png"))); // NOI18N
+        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout barraLayout = new javax.swing.GroupLayout(barra);
         barra.setLayout(barraLayout);
         barraLayout.setHorizontalGroup(
             barraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 540, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barraLayout.createSequentialGroup()
+                .addContainerGap(497, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addGap(19, 19, 19))
         );
         barraLayout.setVerticalGroup(
             barraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barraLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        background.add(barra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 540, 30));
+        background.add(barra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 540, 40));
         background.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 580, 10));
 
         B.setBackground(java.awt.Color.gray);
@@ -796,10 +810,9 @@ public class NewJFrame extends javax.swing.JFrame  {
     }//GEN-LAST:event_BMouseClicked
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
-            AudioClip sonido;
-            sonido = java.applet.Applet.newAudioClip(getClass().getResource("/newpackage/videoplayback.wav"));
-            sonido.play();
+            
             try{
+               
                 m1.RellenarMatriz(0, 0, valor00.getText());
             m1.RellenarMatriz(0, 1, valor01.getText());
             m1.RellenarMatriz(0, 2, valor02.getText());
@@ -875,8 +888,17 @@ public class NewJFrame extends javax.swing.JFrame  {
             }
              
         }
+              AudioClip sonido;
+            sonido = java.applet.Applet.newAudioClip(getClass().getResource("/newpackage/videoplayback.wav"));
+            sonido.play(); 
             }catch(Exception e){
-                JOptionPane.showMessageDialog(this, "¡Erro! tipo: "+ e);
+             AudioClip sonido;
+            sonido = java.applet.Applet.newAudioClip(getClass().getResource("/newpackage/Error.wav"));
+            sonido.play(); 
+             Error r1 = new Error();
+             r1.setVisible(true);
+             r1.setLocationRelativeTo(this);
+             r1.cambiarTexto("Error: inserta solo numeros enteros o fracciones");
             }
     }//GEN-LAST:event_jPanel1MouseClicked
 
@@ -1078,9 +1100,6 @@ public class NewJFrame extends javax.swing.JFrame  {
 
     private void llenarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_llenarMouseClicked
         try{
-            AudioClip sonido;
-            sonido = java.applet.Applet.newAudioClip(getClass().getResource("/newpackage/videoplayback.wav"));
-            sonido.play();
         int max =Integer.valueOf(MAX.getText());
         int min =Integer.valueOf(MIN.getText());
         valor00.setText(m1.GenerarNumerosAleatorios(min, max));
@@ -1124,8 +1143,17 @@ public class NewJFrame extends javax.swing.JFrame  {
         valor32.setForeground(Color.black);
         valor33.setForeground(Color.black);
         valor34.setForeground(Color.black);
+         AudioClip sonido;
+            sonido = java.applet.Applet.newAudioClip(getClass().getResource("/newpackage/videoplayback.wav"));
+            sonido.play();
         }catch(Exception e){
-            JOptionPane.showMessageDialog(this, "¡Error!,coloca un maximo y un minimo en enteros para rellenar la matriz con numeros aleatorios. ");
+             AudioClip sonido;
+            sonido = java.applet.Applet.newAudioClip(getClass().getResource("/newpackage/Error.wav"));
+            sonido.play(); 
+            Error r1 = new Error();
+             r1.setVisible(true);
+             r1.setLocationRelativeTo(this);
+             r1.cambiarTexto("Error: inserta solo numeros enteros");
         }
         
         
@@ -1141,6 +1169,12 @@ public class NewJFrame extends javax.swing.JFrame  {
         MIN.setText("");
         MIN.setForeground(Color.black);
     }//GEN-LAST:event_MINMousePressed
+
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+      Tutorial t1 = new Tutorial();
+      t1.setVisible(true);
+      t1.setLocationRelativeTo(this);
+    }//GEN-LAST:event_jLabel9MouseClicked
     
     /**
      * @param args the command line arguments
@@ -1197,6 +1231,7 @@ public class NewJFrame extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
