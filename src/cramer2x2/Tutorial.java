@@ -5,22 +5,19 @@
 package cramer2x2;
 
 import java.awt.Color;
-import javax.swing.ImageIcon;
 
 /**
  *
  * @author humer
  */
 public class Tutorial extends javax.swing.JFrame {
-    private int xmouse;
-    private int ymouse;
+    private int mousex;
+    private int mousey;
     /**
      * Creates new form Tutorial
      */
     public Tutorial() {
         initComponents();
-        setIconImage(new ImageIcon(getClass().getResource("/newpackage/matriz.png")).getImage());
-
     }
 
     /**
@@ -32,133 +29,119 @@ public class Tutorial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        barra1 = new javax.swing.JPanel();
+        jorgesalir2 = new javax.swing.JPanel();
+        jorgesalir1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(java.awt.Color.white);
         setUndecorated(true);
         setResizable(false);
+        setSize(new java.awt.Dimension(1163, 911));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("chambeando proximamente....");
-
-        jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        barra1.setBackground(java.awt.Color.white);
+        barra1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
-                jPanel2MouseDragged(evt);
+                barra1MouseDragged(evt);
             }
         });
-        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        barra1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel2MousePressed(evt);
+                barra1MousePressed(evt);
             }
         });
 
-        jPanel3.setBackground(java.awt.Color.gray);
+        jorgesalir2.setBackground(java.awt.Color.white);
 
-        jLabel2.setBackground(java.awt.Color.gray);
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("X");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jorgesalir1.setBackground(java.awt.Color.white);
+        jorgesalir1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jorgesalir1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jorgesalir1.setText("X");
+        jorgesalir1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                jorgesalir1MouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel2MouseEntered(evt);
+                jorgesalir1MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel2MouseExited(evt);
+                jorgesalir1MouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+        javax.swing.GroupLayout jorgesalir2Layout = new javax.swing.GroupLayout(jorgesalir2);
+        jorgesalir2.setLayout(jorgesalir2Layout);
+        jorgesalir2Layout.setHorizontalGroup(
+            jorgesalir2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jorgesalir1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                .addContainerGap())
+        jorgesalir2Layout.setVerticalGroup(
+            jorgesalir2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jorgesalir1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout barra1Layout = new javax.swing.GroupLayout(barra1);
+        barra1.setLayout(barra1Layout);
+        barra1Layout.setHorizontalGroup(
+            barra1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(barra1Layout.createSequentialGroup()
+                .addComponent(jorgesalir2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        barra1Layout.setVerticalGroup(
+            barra1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jorgesalir2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
-                .addGap(58, 58, 58))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(98, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newpackage/JORGE.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(barra1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(barra1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 845, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void jorgesalir1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jorgesalir1MouseClicked
         this.dispose();
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_jorgesalir1MouseClicked
 
-    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
-        jLabel2.setForeground(Color.white);
-        jPanel3.setBackground(Color.red);
-        
-    }//GEN-LAST:event_jLabel2MouseEntered
+    private void jorgesalir1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jorgesalir1MouseEntered
+        jorgesalir1.setForeground(Color.white);
+        jorgesalir2.setBackground(Color.red);
+    }//GEN-LAST:event_jorgesalir1MouseEntered
 
-    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
-        jLabel2.setForeground(Color.black);
-        jPanel3.setBackground (Color.gray);
-    }//GEN-LAST:event_jLabel2MouseExited
+    private void jorgesalir1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jorgesalir1MouseExited
+        jorgesalir1.setForeground(Color.black);
+        jorgesalir2.setBackground(Color.white);
+    }//GEN-LAST:event_jorgesalir1MouseExited
 
-    private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
+    private void barra1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_barra1MousePressed
+        mousex = evt.getX();
+        mousey = evt.getY();
+    }//GEN-LAST:event_barra1MousePressed
+
+    private void barra1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_barra1MouseDragged
          int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
-        this.setLocation(x-xmouse, y-ymouse);
-    }//GEN-LAST:event_jPanel2MouseDragged
-
-    private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
-        xmouse = evt.getX();
-        ymouse = evt.getY();
-    }//GEN-LAST:event_jPanel2MousePressed
+        this.setLocation(x-mousex, y-mousey);
+    }//GEN-LAST:event_barra1MouseDragged
 
     /**
      * @param args the command line arguments
@@ -196,10 +179,9 @@ public class Tutorial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel barra1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel jorgesalir1;
+    private javax.swing.JPanel jorgesalir2;
     // End of variables declaration//GEN-END:variables
 }

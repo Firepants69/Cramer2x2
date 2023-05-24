@@ -839,7 +839,7 @@ public class NewJFrame extends javax.swing.JFrame  {
                respuesta2.setText("X2 = "+m1.resultados4x4()[1]);
                respuesta4.setText("X3 = "+m1.resultados4x4()[2]);
                respuesta3.setText("X4 = "+m1.resultados4x4()[3]);
-               deter.setText("Esl determinante es: "+m1.formaString(m1.determinantePrincipal4x4()));
+               deter.setText("El determinante es: "+m1.formaString(m1.determinantePrincipal4x4()));
                error.setText("");
                
             }else{
@@ -1173,7 +1173,12 @@ public class NewJFrame extends javax.swing.JFrame  {
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
       Tutorial t1 = new Tutorial();
       t1.setVisible(true);
-      t1.setLocationRelativeTo(this);
+       int x1 = evt.getXOnScreen();
+        int y1 = evt.getYOnScreen();
+      t1.setLocation(x1+30, y1-20);
+       AudioClip sonido;
+            sonido = java.applet.Applet.newAudioClip(getClass().getResource("/newpackage/videoplayback.wav"));
+            sonido.play();
     }//GEN-LAST:event_jLabel9MouseClicked
     
     /**
