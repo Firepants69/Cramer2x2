@@ -16,6 +16,7 @@ import javax.swing.ImageIcon;
 public class NewJFrame extends javax.swing.JFrame  {
     int xMouse,yMouse;
     MetodoCramer m1 = new MetodoCramer();
+     Tutorial t1 = new Tutorial();
     public NewJFrame() {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/newpackage/matriz.png")).getImage());
@@ -695,6 +696,7 @@ public class NewJFrame extends javax.swing.JFrame  {
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - xMouse, y - yMouse );
+        t1.setLocation((x - xMouse)+565, (y - yMouse));
     }//GEN-LAST:event_barraMouseDragged
 
     private void salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirMouseClicked
@@ -1153,7 +1155,7 @@ public class NewJFrame extends javax.swing.JFrame  {
     }//GEN-LAST:event_MINMousePressed
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-      Tutorial t1 = new Tutorial();
+     
       t1.setVisible(true);
        int x1 = evt.getXOnScreen();
         int y1 = evt.getYOnScreen();
