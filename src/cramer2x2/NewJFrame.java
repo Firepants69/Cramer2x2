@@ -7,6 +7,7 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 import java.applet.AudioClip;
 import javax.swing.ImageIcon;
+
 /**
  *
  * @author humer
@@ -14,9 +15,6 @@ import javax.swing.ImageIcon;
 
 public class NewJFrame extends javax.swing.JFrame  {
     int xMouse,yMouse;
-    private boolean is4x4=false;
-    private boolean is3x3=false;
-    private boolean is2x2=false;
     MetodoCramer m1 = new MetodoCramer();
     public NewJFrame() {
         initComponents();
@@ -669,6 +667,7 @@ public class NewJFrame extends javax.swing.JFrame  {
         respuestas.setColumns(20);
         respuestas.setRows(5);
         respuestas.setTabSize(12);
+        respuestas.setBorder(null);
         jScrollPane1.setViewportView(respuestas);
 
         background.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 350, 120));
@@ -820,11 +819,11 @@ public class NewJFrame extends javax.swing.JFrame  {
     }//GEN-LAST:event_BMouseClicked
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
-             AudioClip sonido;
+              AudioClip sonido;
+            try{
+              
             sonido = java.applet.Applet.newAudioClip(getClass().getResource("/newpackage/videoplayback.wav"));
             sonido.play(); 
-            try{
-               
                 m1.RellenarMatriz(0, 0, valor00.getText());
             m1.RellenarMatriz(0, 1, valor01.getText());
             m1.RellenarMatriz(0, 2, valor02.getText());
