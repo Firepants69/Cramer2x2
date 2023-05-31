@@ -60,18 +60,36 @@ public class MetodoCramer {
      demas por una cosa importante, lo programe en la interfaz XD y solo los uso
     ahí*/
     public boolean SePuedeResolver2x2() {
-        int s = Integer.valueOf(formaString(deltaS2x2()));
+        double s = 0;
+        if (formaString(deltaS2x2()).indexOf("/") == -1) {
+            s = Double.parseDouble(formaString(deltaS2x2()));
+        }else{
+            s = deltaS2x2().getNumerador()/deltaS2x2().getDenominador(); 
+        }
         return s != 0;
     }
 
     public boolean SePuedeResolver3x3() {
-        int s = Integer.valueOf(formaString(deltaS3x3()));
+        double s = 0;
+        if (formaString(deltaS3x3()).indexOf("/") == -1) {
+            s = Double.parseDouble(formaString(deltaS3x3()));
+        }else{
+            s = deltaS3x3().getNumerador()/deltaS3x3().getDenominador(); 
+        }
         return s != 0;
     }
-    public boolean sePuedeResolver4x4(){
-        int s = Integer.valueOf(formaString(determinantePrincipal4x4()));
-        return s!=0;
+    
+
+    public boolean sePuedeResolver4x4() {
+        double s = 0;
+        if (formaString(determinantePrincipal4x4()).indexOf("/") == -1) {
+            s = Double.parseDouble(formaString(determinantePrincipal4x4()));
+        }else{
+            s = determinantePrincipal4x4().getNumerador()/determinantePrincipal4x4().getDenominador(); 
+        }
+        return s != 0;
     }
+    
 
     /*
      estos dos metodos son ya la resolucion y usan otros varios para verse mejor
@@ -231,6 +249,15 @@ public class MetodoCramer {
     public Fraccion determinantePrincipal4x4() {
         Fraccion[][] matriz1 = matriz4x4();
         return determinante4x4(matriz1);
+    }
+    public String determinante4x4 (){
+        return formaString(determinantePrincipal4x4());
+    }
+    public String determinante3x3(){
+        return formaString(deltaS3x3());
+    }
+    public String determinante2x2(){
+        return formaString(deltaS2x2());
     }
     /*
     este metodo hace lo mismo que el cambiarColumna3x3 pero para una matriz 4x4

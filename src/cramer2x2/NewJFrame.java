@@ -14,6 +14,9 @@ import javax.swing.ImageIcon;
 
 public class NewJFrame extends javax.swing.JFrame  {
     int xMouse,yMouse;
+    private boolean is4x4=false;
+    private boolean is3x3=false;
+    private boolean is2x2=false;
     MetodoCramer m1 = new MetodoCramer();
     public NewJFrame() {
         initComponents();
@@ -72,11 +75,8 @@ public class NewJFrame extends javax.swing.JFrame  {
         jLabel9 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         B = new javax.swing.JPanel();
-        respuesta3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        respuesta1 = new javax.swing.JLabel();
-        respuesta2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         error = new javax.swing.JLabel();
         valor04 = new javax.swing.JTextField();
@@ -102,7 +102,6 @@ public class NewJFrame extends javax.swing.JFrame  {
         label12 = new javax.swing.JLabel();
         label13 = new javax.swing.JLabel();
         label14 = new javax.swing.JLabel();
-        respuesta4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         boton4 = new javax.swing.JPanel();
         MAX = new javax.swing.JTextField();
@@ -117,8 +116,8 @@ public class NewJFrame extends javax.swing.JFrame  {
         jPanel1 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        respuesta5 = new javax.swing.JLabel();
-        deter = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        respuestas = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -412,19 +411,16 @@ public class NewJFrame extends javax.swing.JFrame  {
         );
 
         background.add(B, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, -1, 20));
-        background.add(respuesta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 360, 20));
 
         jLabel4.setText("3x3");
         background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, -1, -1));
 
         jLabel5.setText("2x2");
         background.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, -1, -1));
-        background.add(respuesta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 360, 20));
-        background.add(respuesta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 360, 20));
 
         jLabel1.setForeground(new java.awt.Color(0, 153, 153));
         jLabel1.setText("Calculadora cramer 2x2 , 3x3 y 4x4");
-        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 210, -1));
+        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 370, -1));
         background.add(error, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 250, 30));
 
         valor04.setForeground(java.awt.Color.gray);
@@ -535,7 +531,6 @@ public class NewJFrame extends javax.swing.JFrame  {
 
         label14.setText("x4 =");
         background.add(label14, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, -1, -1));
-        background.add(respuesta4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 360, 20));
 
         jLabel7.setText("4x4");
         background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, -1, 20));
@@ -658,10 +653,14 @@ public class NewJFrame extends javax.swing.JFrame  {
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newpackage/uv logo.jpg"))); // NOI18N
         background.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, 80));
-        background.add(respuesta5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 360, 20));
 
-        deter.setForeground(java.awt.Color.gray);
-        background.add(deter, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 360, 20));
+        respuestas.setEditable(false);
+        respuestas.setBackground(new java.awt.Color(204, 204, 204));
+        respuestas.setColumns(20);
+        respuestas.setRows(5);
+        jScrollPane1.setViewportView(respuestas);
+
+        background.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 370, 110));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -833,57 +832,26 @@ public class NewJFrame extends javax.swing.JFrame  {
             m1.RellenarMatriz(3, 2, valor32.getText());
             m1.RellenarMatriz(3, 3, valor33.getText());
             m1.RellenarMatriz(3, 4, valor34.getText());
-              if(label9.isVisible()){
+                if(label9.isVisible()){
             if(m1.sePuedeResolver4x4()){
-               respuesta1.setText("X1 = "+m1.resultados4x4()[0]);
-               respuesta2.setText("X2 = "+m1.resultados4x4()[1]);
-               respuesta4.setText("X3 = "+m1.resultados4x4()[2]);
-               respuesta3.setText("X4 = "+m1.resultados4x4()[3]);
-               deter.setText("El determinante es: "+m1.formaString(m1.determinantePrincipal4x4()));
-               error.setText("");
+              respuestas.setText("x1 = "+m1.resultados4x4()[0]+"\n"+"x2 = "+m1.resultados4x4()[1]+"\n"+"x3 = "+m1.resultados4x4()[2]+"\n"+"x4 = "+m1.resultados4x4()[3]
+              +"\n"+"determinante de la matriz de identidad = "+m1.formaString(m1.determinantePrincipal4x4()));
                
             }else{
-                respuesta2.setText("");
-                respuesta1.setText("");
-                respuesta3.setText("");
-                respuesta4.setText("");
-                error.setText("No tiene solucion o tiene infinitas soluciones");
-                error.setForeground(Color.red);
-                deter.setText("");
+               respuestas.setText("\n"+"\n"+"no tiene solución o tiene infinitas soluciones");           
             }
         }else if(label9.isVisible()==false&&label7.isVisible()){
              if(m1.SePuedeResolver3x3()){
-               respuesta1.setText("X1 = "+m1.resultados3x3()[0]);
-               respuesta2.setText("X2 = "+m1.resultados3x3()[1]);
-               respuesta4.setText("X3 = "+m1.resultados3x3()[2]);
-               respuesta3.setText("");
-               error.setText("");
-               deter.setText("El determinante es: "+m1.formaString(m1.deltaS3x3())  );
+              respuestas.setText("x1 = "+m1.resultados3x3()[0]+"\n"+"x2 = "+m1.resultados3x3()[1]+"\n"+"x3 = "+m1.resultados3x3()[2]
+              +"\n"+"determinante de la matriz de identidad = "+m1.formaString(m1.deltaS3x3()));
             }else{
-                respuesta2.setText("");
-                respuesta1.setText("");
-                respuesta3.setText("");
-                respuesta4.setText("");
-                error.setText("No tiene solucion o tiene infinitas soluciones");
-                error.setForeground(Color.red);
-                deter.setText("");
+               respuestas.setText("\n"+"\n"+"no tiene solución o tiene infinitas soluciones");
              }
         }else{
             if(m1.SePuedeResolver2x2()){
-                respuesta2.setText("X1 = "+m1.X2x2());
-                respuesta4.setText("X2 = "+m1.Y2x2());
-                respuesta1.setText("");
-                respuesta3.setText("");
-                error.setText("");
-                deter.setText("El determinante es: "+m1.formaString(m1.deltaS2x2())  );
+              respuestas.setText("x1 = "+m1.X2x2()+"\n"+"x2 = "+m1.Y2x2()+"\n"+"determiannte de la matriz de identidad = "+m1.formaString(m1.deltaS2x2()));
             }else{
-                respuesta2.setText("");
-                respuesta1.setText("");
-                respuesta3.setText("");
-                respuesta4.setText("");
-                error.setText("No tiene solucion o tiene infinitas soluciones");
-                error.setForeground(Color.red);
-                deter.setText("");
+               respuestas.setText("\n"+"\n"+"no tiene solución o tiene infinitas soluciones"); 
                 
             }
              
@@ -1019,11 +987,6 @@ public class NewJFrame extends javax.swing.JFrame  {
          valor33.setText("");
         valor33.setForeground(Color.black);
     }//GEN-LAST:event_valor33MousePressed
-
-    private void valor32MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_valor32MousePressed
-        valor32.setText("");
-        valor32.setForeground(Color.black);
-    }//GEN-LAST:event_valor32MousePressed
 
     private void valor34MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_valor34MousePressed
         valor34.setText("");
@@ -1180,6 +1143,11 @@ public class NewJFrame extends javax.swing.JFrame  {
             sonido = java.applet.Applet.newAudioClip(getClass().getResource("/newpackage/videoplayback.wav"));
             sonido.play();
     }//GEN-LAST:event_jLabel9MouseClicked
+
+    private void valor32MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_valor32MousePressed
+        valor32.setText("");
+        valor32.setForeground(Color.black);
+    }//GEN-LAST:event_valor32MousePressed
     
     /**
      * @param args the command line arguments
@@ -1224,7 +1192,6 @@ public class NewJFrame extends javax.swing.JFrame  {
     private javax.swing.JPanel background;
     private javax.swing.JPanel barra;
     private javax.swing.JPanel boton4;
-    private javax.swing.JLabel deter;
     private javax.swing.JLabel error;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1238,6 +1205,7 @@ public class NewJFrame extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -1262,11 +1230,7 @@ public class NewJFrame extends javax.swing.JFrame  {
     private javax.swing.JLabel label8;
     private javax.swing.JLabel label9;
     private javax.swing.JPanel llenar;
-    private javax.swing.JLabel respuesta1;
-    private javax.swing.JLabel respuesta2;
-    private javax.swing.JLabel respuesta3;
-    private javax.swing.JLabel respuesta4;
-    private javax.swing.JLabel respuesta5;
+    private javax.swing.JTextArea respuestas;
     private javax.swing.JLabel salir;
     private javax.swing.JPanel salir1;
     private javax.swing.JSeparator separador1;
